@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+    --color-base-white: #fff;
+    --color-base-white-100: #F9F4FB;
+    --color-base-light-purple: #B52184;
+    --color-base-dark-blue: #312D64;
+    --color-base-dark-blue-100: #302C63;
+    --color-base-blue: #343193;
+}
+
+
+body {
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: 'Mulish', sans-serif;
+    width: 100vw;
+    background-color: var(--color-base-white-100);
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+h1,
+h2 {
+    color: var(--color-base-light-purple);
+    font-weight: 900;
+}
+
+p {
+    color: var(--color-base-dark-blue);
+    font-size: 1.6rem;
+}
+
+.container, form, footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .mobile-header,
+.pc-header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .pc-header {
+    display: none;
+}
+
+.header-banner {
+    height: 50%;
+}
+
+.header-button {
+    margin-top: 3.5rem;
+    max-height: 10.5rem;
+    animation: vertical-shaking 2s infinite;
+}
+
+header p {
+    margin-top: .5rem;
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 3.2rem;
+    margin-top: 1.8rem;
+
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin-top: 3rem;
+}
+
+.container {
+    padding: 5.2rem 3.6rem;
+    gap: 5rem;
+}
+
+.card {
+    background-color: var(--color-base-white);
+    border-radius: 2rem;
+    padding: 2.6rem;
+}
+
+.card p {
+    margin-top: 1rem;
+}
+
+section {
+    padding: 7rem 4rem;
+    background-color: var(--color-base-white-100);
+}
+
+section img {
+    display: none;
+}
+
+form {
+    gap: 2.4rem;
+    margin-top: 4rem;
+}
+
+form label {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+
+#name::placeholder {
+    background: url('./assets/person.svg') no-repeat;
+    background-size: 2.2rem;
+    padding-left: 3.6rem;
+}
+
+#email::placeholder {
+    background: url('./assets/at.svg') no-repeat;
+    background-size: 2.2rem;
+    padding-left: 3.6rem;
+}
+
+form input,
+textarea {
+    width: 100%;
+    min-height: 4.8rem;
+    border-radius: 16px;
+    border: 1.5px solid var(--color-base-dark-blue);
+    padding: 1.2rem 1.4rem;
+
+}
+
+form input,
+textarea,
+input::placeholder,
+textarea::placeholder {
+    color: var(--color-base-dark-blue);
+    font-weight: 600;
+    font-size: 1.6rem;
+    font-family: 'Mulish', sans-serif;
+}
+
+form textarea {
+    min-height: 12.6rem;
+}
+
+form input[type=submit] {
+    width: 15rem;
+    align-self: start;
+    color: var(--color-base-white);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+main,
+footer,
+form input[type=submit] {
+    background: linear-gradient(96deg, var(--color-base-blue) 0%, var(--color-base-dark-blue-100) 99.68%);
+}
+
+footer {
+    padding: 3.2rem 0;
+}
+
+span {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--color-base-white);
+}
+
+@media(min-width: 900px) {
+    header .mobile-header {
+        display: none;
+    }
+
+    header .pc-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-items: start;
+        justify-items: center;
+    }
+
+    header .pc-header h1 {
+        font-size: 5rem;
+        margin-top: 23rem;
+    }
+
+    header .pc-header p {
+        font-size: 2.73rem;
+        margin-top: 0;
+    }
+
+    header .header-banner {
+        height: 90%;
+    }
+
+    header .header-button {
+        margin-top: 15rem;
+    }
+
+    main.container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 6.4rem 11rem;
+        gap: 6rem;
+    }
+
+    .card {
+        width: 36.6rem;
+        height: 44.8rem;
+    }
+
+    .card p {
+        font-size: 2rem;
+    }
+
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    section div {
+        width: 55%;
+        padding: 5rem 11rem;
+    }
+    section img {
+        display: block;
+        width: 45%;
+    }
+    
+    footer {
+        padding: 2rem 0;
+        height: 7.8rem;
+    }
+}
+
+@keyframes vertical-shaking {
+    0% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(1rem)
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
